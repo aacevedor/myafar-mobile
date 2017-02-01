@@ -9,6 +9,18 @@ import { Page2 } from '../pages/page2/page2';
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '9a926507'
+  },
+  'push': {
+    'sender_id': '708137294306',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+        'iconColor': '#343434'
+      }
+    }
   }
 };
 @NgModule({

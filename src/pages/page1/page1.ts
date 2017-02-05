@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController,AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-page1',
@@ -8,8 +8,17 @@ import { NavController } from 'ionic-angular';
 })
 export class Page1 {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public ctrlAlert: AlertController ) {
     
   }
+
+	 presentAlert() {
+	  let alert = this.ctrlAlert.create({
+	    title: 'Low battery',
+	    subTitle: '10% of battery remaining',
+	    buttons: ['Dismiss']
+	  });
+	  alert.present();
+	}
 
 }

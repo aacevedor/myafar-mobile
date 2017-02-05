@@ -6,12 +6,7 @@
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="http://ionic.local/*"/>
-  <allow-navigation href="http://10.10.93.100:true"/>
-<<<<<<< HEAD
   <allow-navigation href="http://192.168.0.11:8100"/>
-=======
-  <allow-navigation href="http://10.10.93.100:8100"/>
->>>>>>> 93de5b82f5e73b5307e68f2e1e1afeb03997d532
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
@@ -43,6 +38,6 @@
   <plugin name="cordova-plugin-device" spec="1.1.4"/>
   <plugin name="cordova-plugin-splashscreen" spec="~4.0.1"/>
   <plugin name="phonegap-plugin-push" spec="~1.9.2">
-    <variable name="SENDER_ID" value="782516019251"/>
+    <variable name="SENDER_ID" value="9a926507"/>
   </plugin>
 </widget>

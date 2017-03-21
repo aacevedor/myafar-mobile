@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, AlertController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { BackgroundMode } from '@ionic-native/background-mode';
 import {Push , PushToken} from '@ionic/cloud-angular';
 
 import { Page1 } from '../pages/page1/page1';
@@ -8,7 +9,8 @@ import { Page2 } from '../pages/page2/page2';
 
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers:[ BackgroundMode ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -17,7 +19,7 @@ export class MyApp {
   token : any;
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public push: Push, public ctrlAlert: AlertController) {
+  constructor(public platform: Platform, public push: Push, public ctrlAlert: AlertController, public BackgroundMode:BackgroundMode) {
     this.initializeApp();
     this.token = '';
 
@@ -30,14 +32,15 @@ export class MyApp {
   }
 
     initializeApp() {
-      this.platform.ready().then(() => {
+
+       this.platform.ready().then(() => {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
         StatusBar.styleDefault();
         Splashscreen.hide();
         this.initPushNotification();
         this.initAlert();
-
+        
       });
     }
 
@@ -62,6 +65,7 @@ export class MyApp {
         alert(msg.title + ': ' + msg.text); 
       });
 
+      this.BackgroundMode.enable();
 
     }
 
